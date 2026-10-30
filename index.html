@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#17152f">
+  <meta name="description" content="Vivek AI Business - छोटे बिजनेस की शुरुआत के लिए सरल हिंदी और English टूल।">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <title>Vivek AI Business</title>
+  <style>
+    :root{--bg:#f5f4fb;--card:#fff;--ink:#211e35;--muted:#706c83;--brand:#5b43d6;--brand2:#8a6cf0;--line:#e9e6f2;--green:#16865c}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Noto Sans Devanagari",sans-serif}
+    header{background:linear-gradient(135deg,#17152f,#392a78 65%,#694bd9);color:white;padding:25px 18px 28px;border-radius:0 0 26px 26px}
+    .top{display:flex;justify-content:space-between;align-items:center;gap:12px}.logo{font-weight:800;font-size:19px;letter-spacing:.2px}.lang{border:1px solid #ffffff70;background:#ffffff18;color:white;border-radius:20px;padding:8px 12px}
+    header h1{font-size:26px;line-height:1.2;margin:24px 0 8px}header p{margin:0;color:#e4defe;font-size:14px;max-width:520px}
+    main{max-width:760px;margin:auto;padding:16px 14px 42px}.section-title{font-size:18px;margin:22px 2px 12px}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.tile,.panel{background:var(--card);border:1px solid var(--line);border-radius:17px;padding:15px;box-shadow:0 5px 18px #24165c08}
+    .tile .emoji{font-size:25px}.tile h3{font-size:15px;margin:9px 0 4px}.tile p{font-size:12px;color:var(--muted);margin:0;line-height:1.45}
+    .panel{margin-top:12px}.panel h2{font-size:17px;margin:0 0 12px}.field{margin:11px 0}.field label{display:block;font-size:13px;font-weight:650;margin-bottom:6px}
+    input,select,textarea{width:100%;border:1px solid #ded9ed;border-radius:11px;padding:12px;background:#fff;color:var(--ink);font:inherit;font-size:14px}
+    textarea{min-height:80px;resize:vertical}.btn{border:0;border-radius:12px;background:var(--brand);color:white;padding:12px 15px;font-weight:700;font-size:14px;width:100%;margin-top:8px;cursor:pointer}.btn.secondary{background:#eeeafd;color:#38278f}.btn.small{width:auto;padding:9px 12px;margin:4px 5px 0 0}
+    .result{background:#f6f3ff;border:1px solid #e3dcff;border-radius:13px;padding:13px;margin-top:12px;white-space:pre-wrap;font-size:13px;line-height:1.55}
+    .muted{color:var(--muted);font-size:12px;line-height:1.5}.row{display:flex;gap:8px;align-items:center}.row>*{flex:1}
+    .stat{font-size:23px;font-weight:800;color:var(--green)}.item{padding:10px 0;border-bottom:1px solid var(--line);font-size:13px}.item:last-child{border:0}
+    footer{text-align:center;color:var(--muted);font-size:11px;padding:20px}
+    @media(min-width:620px){header{padding:30px max(24px,calc((100% - 720px)/2)) 34px}.grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="top"><div class="logo">✦ Vivek AI Business</div><button class="lang" id="langBtn">English</button></div>
+  <h1 id="heroTitle">आपके छोटे बिजनेस का स्मार्ट साथी</h1>
+  <p id="heroSub">अपना बजट चुनें, बिजनेस आइडिया पाएँ और आज ही पहला कदम उठाएँ।</p>
+</header>
+<main>
+  <h2 class="section-title" id="toolsTitle">आप क्या करना चाहते हैं?</h2>
+  <div class="grid">
+    <div class="tile"><div class="emoji">💡</div><h3 id="t1">बिजनेस आइडिया</h3><p id="d1">बजट के अनुसार शुरुआत के विकल्प।</p></div>
+    <div class="tile"><div class="emoji">🗓️</div><h3 id="t2">7-दिन का प्लान</h3><p id="d2">छोटे-छोटे कदमों में शुरुआत।</p></div>
+    <div class="tile"><div class="emoji">📣</div><h3 id="t3">मार्केटिंग कॉपी</h3><p id="d3">WhatsApp के लिए प्रचार संदेश।</p></div>
+    <div class="tile"><div class="emoji">📒</div><h3 id="t4">कमाई का हिसाब</h3><p id="d4">बिक्री और खर्च अपने फोन में सेव करें।</p></div>
+  </div>
+
+  <section class="panel">
+    <h2 id="ideaTitle">💡 मेरा बिजनेस आइडिया बनाओ</h2>
+    <div class="field"><label id="budgetLabel" for="budget">आपका शुरुआती बजट</label>
+      <select id="budget"><option value="0">₹0</option><option value="300" selected>₹0–₹500</option><option value="1000">₹500–₹1,000</option><option value="3000">₹1,000–₹3,000</option><option value="5000">₹3,000+</option></select>
+    </div>
+    <div class="field"><label id="skillLabel" for="skill">आपको क्या करना पसंद है?</label>
+      <select id="skill"><option value="digital">मोबाइल / डिजिटल काम</option><option value="food">खाना / घरेलू उत्पाद</option><option value="teaching">पढ़ाना / जानकारी देना</option><option value="craft">हस्तकला / डिजाइन</option><option value="local">स्थानीय सेवाएँ</option></select>
+    </div>
+    <div class="field"><label id="timeLabel" for="time">रोज कितना समय दे सकते हैं?</label>
+      <select id="time"><option>1 घंटा</option><option selected>2–3 घंटे</option><option>4–5 घंटे</option><option>पूरा दिन</option></select>
+    </div>
+    <button class="btn" id="generateBtn">मेरा बिजनेस प्लान बनाओ</button>
+    <div id="ideaResult" class="result" hidden></div>
+    <button class="btn secondary" id="copyPlan" hidden>प्लान कॉपी करें</button>
+  </section>
+
+  <section class="panel">
+    <h2 id="marketingTitle">📣 WhatsApp विज्ञापन बनाओ</h2>
+    <div class="field"><label id="productLabel" for="product">आप क्या बेचते हैं?</label><input id="product" placeholder="जैसे: घर का बना अचार / सिलाई सेवा"></div>
+    <div class="field"><label id="priceLabel" for="price">कीमत (₹)</label><input id="price" type="number" min="0" placeholder="जैसे: 199"></div>
+    <button class="btn" id="adBtn">विज्ञापन तैयार करें</button>
+    <div id="adResult" class="result" hidden></div>
+    <button class="btn secondary" id="shareAd" hidden>WhatsApp पर शेयर करें</button>
+  </section>
+
+  <section class="panel">
+    <h2 id="ledgerTitle">📒 मेरी बिक्री और खर्च</h2>
+    <div class="row">
+      <div class="field"><label id="typeLabel" for="entryType">प्रकार</label><select id="entryType"><option value="sale">बिक्री</option><option value="expense">खर्च</option></select></div>
+      <div class="field"><label id="amountLabel" for="amount">राशि (₹)</label><input id="amount" type="number" min="1" placeholder="100"></div>
+    </div>
+    <div class="field"><label id="noteLabel" for="note">विवरण</label><input id="note" placeholder="जैसे: पहला ऑर्डर"></div>
+    <button class="btn" id="saveEntry">हिसाब सेव करें</button>
+    <div class="result"><span id="profitLabel">कुल शुद्ध रकम</span><div class="stat" id="profit">₹0</div><div class="muted" id="ledgerCount">0 रिकॉर्ड सेव हैं</div></div>
+    <div id="entries"></div>
+    <button class="btn secondary" id="exportBtn">CSV हिसाब डाउनलोड करें</button>
+  </section>
+  <p class="muted" id="privacy">आपका हिसाब इसी डिवाइस के ब्राउज़र में सेव होता है। ब्राउज़र डेटा मिटाने पर रिकॉर्ड हट सकते हैं। नियमित बैकअप रखें।</p>
+</main>
+<footer>Vivek AI Business · Version 1.0 · Business results are not guaranteed.</footer>
+<script>
+const $=id=>document.getElementById(id);
+let lang="hi", lastPlan="", lastAd="";
+const text={
+hi:{hero:"आपके छोटे बिजनेस का स्मार्ट साथी",sub:"अपना बजट चुनें, बिजनेस आइडिया पाएँ और आज ही पहला कदम उठाएँ।",tools:"आप क्या करना चाहते हैं?",titles:["बिजनेस आइडिया","7-दिन का प्लान","मार्केटिंग कॉपी","कमाई का हिसाब"],descs:["बजट के अनुसार शुरुआत के विकल्प।","छोटे-छोटे कदमों में शुरुआत।","WhatsApp के लिए प्रचार संदेश।","बिक्री और खर्च अपने फोन में सेव करें।"],idea:"💡 मेरा बिजनेस आइडिया बनाओ",budget:"आपका शुरुआती बजट",skill:"आपको क्या करना पसंद है?",time:"रोज कितना समय दे सकते हैं?",generate:"मेरा बिजनेस प्लान बनाओ",marketing:"📣 WhatsApp विज्ञापन बनाओ",product:"आप क्या बेचते हैं?",price:"कीमत (₹)",ad:"विज्ञापन तैयार करें",ledger:"📒 मेरी बिक्री और खर्च",type:"प्रकार",amount:"राशि (₹)",note:"विवरण",save:"हिसाब सेव करें",profit:"कुल शुद्ध रकम",export:"CSV हिसाब डाउनलोड करें",privacy:"आपका हिसाब इसी डिवाइस के ब्राउज़र में सेव होता है। ब्राउज़र डेटा मिटाने पर रिकॉर्ड हट सकते हैं। नियमित बैकअप रखें.",copy:"प्लान कॉपी करें",share:"WhatsApp पर शेयर करें"},
+en:{hero:"Your smart partner for a small business",sub:"Choose your budget, get an idea and take your first step today.",tools:"What would you like to do?",titles:["Business Ideas","7-Day Plan","Marketing Copy","Income Tracker"],descs:["Starter options based on your budget.","Start with small daily actions.","Promotional message for WhatsApp.","Save sales and expenses on your phone."],idea:"💡 Generate my business idea",budget:"Your starting budget",skill:"What kind of work do you like?",time:"How much time can you give daily?",generate:"Create my business plan",marketing:"📣 Create a WhatsApp Ad",product:"What are you selling?",price:"Price (₹)",ad:"Generate advertisement",ledger:"📒 My Sales & Expenses",type:"Type",amount:"Amount (₹)",note:"Description",save:"Save entry",profit:"Net total",export:"Download CSV ledger",privacy:"Your ledger is stored in this browser on this device. Clearing browser data may delete it. Keep backups.",copy:"Copy plan",share:"Share on WhatsApp"}
+};
+function applyLang(){let t=text[lang];$("langBtn").textContent=lang==="hi"?"English":"हिंदी";$("heroTitle").textContent=t.hero;$("heroSub").textContent=t.sub;$("toolsTitle").textContent=t.tools;["t1","t2","t3","t4"].forEach((id,i)=>$(id).textContent=t.titles[i]);["d1","d2","d3","d4"].forEach((id,i)=>$(id).textContent=t.descs[i]);$("ideaTitle").textContent=t.idea;$("budgetLabel").textContent=t.budget;$("skillLabel").textContent=t.skill;$("timeLabel").textContent=t.time;$("generateBtn").textContent=t.generate;$("marketingTitle").textContent=t.marketing;$("productLabel").textContent=t.product;$("priceLabel").textContent=t.price;$("adBtn").textContent=t.ad;$("ledgerTitle").textContent=t.ledger;$("typeLabel").textContent=t.type;$("amountLabel").textContent=t.amount;$("noteLabel").textContent=t.note;$("saveEntry").textContent=t.save;$("profitLabel").textContent=t.profit;$("exportBtn").textContent=t.export;$("privacy").textContent=t.privacy;$("copyPlan").textContent=t.copy;$("shareAd").textContent=t.share}
+$("langBtn").onclick=()=>{lang=lang==="hi"?"en":"hi";applyLang()};
+function makePlan(){let b=+$("budget").value,s=$("skill").value,t=$("time").value;let opts={
+digital:["स्थानीय दुकानों के लिए WhatsApp पोस्ट और डिजिटल मेन्यू बनाना","छोटे कारोबारियों के लिए सोशल मीडिया पोस्ट पैक","मोबाइल से रिज्यूमे और पोस्टर डिजाइन सेवा"],
+food:["घर के बने स्नैक्स/अचार के प्री-ऑर्डर लेना","छोटे ऑर्डर पर टिफिन या नाश्ता सेवा","त्योहारों के लिए घर का बना गिफ्ट पैक"],
+teaching:["बच्चों के लिए ऑनलाइन बेसिक ट्यूशन","किसी एक कौशल की छोटी ऑनलाइन क्लास","स्थानीय विद्यार्थियों के लिए नोट्स और वर्कशीट"],
+craft:["कस्टम गिफ्ट और हस्तनिर्मित कार्ड","मेहंदी/डिजाइन बुकिंग सेवा","त्योहारों के लिए सजावट पैक"],
+local:["स्थानीय दुकानों की डिजिटल लिस्टिंग सेवा","घर/दुकान के लिए छोटी सफाई या सहायता सेवा","स्थानीय डिलीवरी/ऑर्डर समन्वय सेवा"]};
+let idx=b<=500?0:b<=1000?1:2;let idea=opts[s][idx];let cost=b<=500?"₹0–₹500":b<=1000?"₹500–₹1,000":"₹1,000–₹3,000";let plan=`आपके लिए बिजनेस सुझाव: ${idea}\nशुरुआती बजट: ${cost}\nरोज उपलब्ध समय: ${t}\n\n7-दिन का एक्शन प्लान:\nदिन 1: अपने ग्राहक और सेवा को स्पष्ट करें।\nदिन 2: 3 नमूने/डेमो तैयार करें।\nदिन 3: कीमत और नियम लिखें।\nदिन 4: WhatsApp Business प्रोफाइल और कैटलॉग बनाएँ।\nदिन 5: 20 संभावित ग्राहकों से अनुमति लेकर संपर्क करें।\nदिन 6: पहले ऑर्डर के लिए परिचयात्मक ऑफर दें।\nदिन 7: प्रतिक्रिया लें, खर्च और बिक्री दर्ज करें।\n\nपहला लक्ष्य: 1 भुगतान करने वाला ग्राहक।\nध्यान दें: कमाई की गारंटी नहीं है। पहले मांग जाँचें और अनावश्यक खर्च न करें।`;lastPlan=plan;$("ideaResult").textContent=plan;$("ideaResult").hidden=false;$("copyPlan").hidden=false}
+$("generateBtn").onclick=makePlan;
+$("copyPlan").onclick=()=>navigator.clipboard?.writeText(lastPlan).then(()=>alert(lang==="hi"?"प्लान कॉपी हो गया":"Plan copied")).catch(()=>alert(lastPlan));
+$("adBtn").onclick=()=>{let p=$("product").value.trim(),v=$("price").value.trim();if(!p){alert(lang==="hi"?"पहले उत्पाद या सेवा का नाम लिखें":"Enter a product or service first");return}lastAd=`🌟 नमस्ते! हमारे पास ${p} उपलब्ध है।\nकीमत: ${v?"₹"+v:"जानने के लिए संपर्क करें"}\nगुणवत्ता और सेवा की जानकारी के लिए मैसेज करें।\nऑर्डर/पूछताछ के लिए WhatsApp पर संपर्क करें।\nधन्यवाद!`; $("adResult").textContent=lastAd;$("adResult").hidden=false;$("shareAd").hidden=false};
+$("shareAd").onclick=()=>window.open("https://wa.me/?text="+encodeURIComponent(lastAd),"_blank");
+function getEntries(){try{return JSON.parse(localStorage.getItem("vab_entries")||"[]")}catch(e){return []}}
+function render(){let a=getEntries(),sales=a.filter(x=>x.type==="sale").reduce((s,x)=>s+x.amount,0),exp=a.filter(x=>x.type==="expense").reduce((s,x)=>s+x.amount,0);$("profit").textContent="₹"+(sales-exp).toLocaleString("en-IN");$("ledgerCount").textContent=a.length+(lang==="hi"?" रिकॉर्ड सेव हैं":" entries saved");$("entries").innerHTML=a.slice().reverse().map(x=>`<div class="item">${x.type==="sale"?"🟢":"🔴"} ${escapeHtml(x.note)} — ₹${x.amount} <span class="muted">(${x.date})</span></div>`).join("")}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+$("saveEntry").onclick=()=>{let amount=+$("amount").value,note=$("note").value.trim();if(amount<=0||!note){alert(lang==="hi"?"राशि और विवरण भरें":"Enter amount and description");return}let a=getEntries();a.push({type:$("entryType").value,amount,note,date:new Date().toLocaleDateString("en-IN")});localStorage.setItem("vab_entries",JSON.stringify(a));$("amount").value="";$("note").value="";render()};
+$("exportBtn").onclick=()=>{let a=getEntries(),csv="Type,Amount,Description,Date\n"+a.map(x=>[x.type,x.amount,'"'+x.note.replace(/"/g,'""')+'"',x.date].join(",")).join("\n");let url=URL.createObjectURL(new Blob([csv],{type:"text/csv"}));let el=document.createElement("a");el.href=url;el.download="vivek-business-ledger.csv";el.click();URL.revokeObjectURL(url)};
+applyLang();render();
+if("serviceWorker" in navigator && location.protocol.startsWith("http")){window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}))}
+</script>
+</body>
+</html>
